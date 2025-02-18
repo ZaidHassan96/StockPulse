@@ -52,4 +52,3 @@ for symbol, name in stocks:
 stock_list_data = pd.concat(stock_list_data)
 
 
-stock_list_data.to_csv("stocks.csv", index=False)
