@@ -1,0 +1,18 @@
+import psycopg2
+import csv
+from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+
+try:
+    connection = psycopg2.connect(
+        dbname=os.getenv("DB_NAME"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        host=os.getenv("DB_HOST"),
+        port=os.getenv("DB_PORT")
+    )
+    
+except Exception as error:
+    print(f"Error: {error}")

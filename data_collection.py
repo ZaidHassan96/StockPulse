@@ -1,9 +1,9 @@
-import yfinance as yf
-import pandas as pd
+# import yfinance as yf
+# import pandas as pd
 
 
 
-# list of tuples containing company symbols and names.
+# # list of tuples containing company symbols and names.
 stocks = [
     ("AAPL", "Apple Inc."),
     ("MSFT", "Microsoft Corp."),
@@ -32,23 +32,23 @@ stocks = [
 
 
 
-stock_list_data = []
+# stock_list_data = []
 
-# Looping through the list and downloading each companies data by using the yfinance.download function which uses the symbol i.e "AMZN" for the company Amazon.
-for symbol, name in stocks:
-    data = yf.download(symbol, period="1y")
-    data["Company"] = name
-    data.reset_index(inplace=True)
-    data.columns = data.columns.droplevel(1)
-    data.columns.name = None
-    stock_list_data.append(data)
-
-
+# # Looping through the list and downloading each companies data by using the yfinance.download function which uses the symbol i.e "AMZN" for the company Amazon.
+# for symbol, name in stocks:
+#     data = yf.download(symbol, period="1y")
+#     data["Company"] = name
+#     data.reset_index(inplace=True)
+#     data.columns = data.columns.droplevel(1)
+#     data.columns.name = None
+#     stock_list_data.append(data)
 
 
 
 
 
-stock_list_data = pd.concat(stock_list_data)
+
+
+# stock_list_data = pd.concat(stock_list_data)
 
 
