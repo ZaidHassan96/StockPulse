@@ -1,12 +1,36 @@
-from fetch_data import fetch_stock_data
+from utils.fetch_data import fetch_stock_data
 import streamlit as st
 import pandas as pd
-import psycopg2
 import seaborn as sns
 import matplotlib.pyplot as plt
-from data_collection import stocks
 import matplotlib.dates as mdates
 
+
+# # list of tuples containing company symbols and names.
+stocks = [
+    ("AAPL", "Apple Inc."),
+    ("MSFT", "Microsoft Corp."),
+    ("GOOGL", "Alphabet Inc. (Google)"),
+    ("GOOG", "Alphabet Inc. (Google) - Class C"),
+    ("AMZN", "Amazon.com, Inc."),
+    ("NVDA", "NVIDIA Corporation"),
+    ("META", "Meta Platforms, Inc. (Facebook)"),
+    ("TSLA", "Tesla Inc."),
+    ("TSM", "Taiwan Semiconductor Manufacturing Company (TSMC)"),
+    ("BRK-A", "Berkshire Hathaway Inc. - Class A"),
+    ("BRK-B", "Berkshire Hathaway Inc. - Class B"),
+    ("ADBE", "Adobe Inc."),
+    ("INTC", "Intel Corporation"),
+    ("ASML", "ASML Holding"),
+    ("ORCL", "Oracle Corporation"),
+    ("CRM", "Salesforce, Inc."),
+    ("AMD", "Advanced Micro Devices"),
+    ("QCOM", "Qualcomm Incorporated"),
+    ("PYPL", "PayPal Holdings, Inc."),
+    ("SPOT", "Spotify Technology S.A."),
+    ("ZM", "Zoom Video Communications"),
+    ("NOW", "ServiceNow, Inc.")
+]
 
 st.title('Stock Price Trend Visualization')
 

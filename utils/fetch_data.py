@@ -3,7 +3,7 @@ import pandas as pd
 import psycopg2
 import seaborn as sns
 import matplotlib.pyplot as plt
-from db_config import connection
+from db.db_config import connection
 
 
 def fetch_stock_data(company):
