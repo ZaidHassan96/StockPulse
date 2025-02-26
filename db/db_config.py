@@ -1,5 +1,4 @@
 import psycopg2
-import csv
 from pathlib import Path
 import os
 from dotenv import load_dotenv

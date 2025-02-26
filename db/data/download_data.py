@@ -7,12 +7,12 @@ import pandas as pd
 stocks = [
     ("AAPL", "Apple Inc."),
     ("MSFT", "Microsoft Corp."),
-    ("GOOGL", "Alphabet Inc. (Google)"),
-    ("GOOG", "Alphabet Inc. (Google) - Class C"),
-    ("AMZN", "Amazon.com, Inc."),
+    ("GOOGL", "Alphabet Inc (Google)"),
+    ("GOOG", "Alphabet Inc (Google) - Class C"),
+    ("AMZN", "Amazon.com Inc"),
     ("NVDA", "NVIDIA Corporation"),
-    ("META", "Meta Platforms, Inc. (Facebook)"),
-    ("TSLA", "Tesla Inc."),
+    ("META", "Meta Platforms Inc(Facebook)"),
+    ("TSLA", "Tesla Inc"),
     ("TSM", "Taiwan Semiconductor Manufacturing Company (TSMC)"),
     ("BRK-A", "Berkshire Hathaway Inc. - Class A"),
     ("BRK-B", "Berkshire Hathaway Inc. - Class B"),
@@ -20,13 +20,13 @@ stocks = [
     ("INTC", "Intel Corporation"),
     ("ASML", "ASML Holding"),
     ("ORCL", "Oracle Corporation"),
-    ("CRM", "Salesforce, Inc."),
+    ("CRM", "Salesforce Inc."),
     ("AMD", "Advanced Micro Devices"),
     ("QCOM", "Qualcomm Incorporated"),
-    ("PYPL", "PayPal Holdings, Inc."),
+    ("PYPL", "PayPal Holdings Inc."),
     ("SPOT", "Spotify Technology S.A."),
     ("ZM", "Zoom Video Communications"),
-    ("NOW", "ServiceNow, Inc.")
+    ("NOW", "ServiceNow Inc.")
 ]
 
 
