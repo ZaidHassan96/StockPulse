@@ -17,7 +17,6 @@ stocks = [
     ("META", "Meta Platforms Inc(Facebook)"),
     ("TSLA", "Tesla Inc"),
     ("TSM", "Taiwan Semiconductor Manufacturing Company (TSMC)"),
-    ("BRK-A", "Berkshire Hathaway Inc. - Class A"),
     ("BRK-B", "Berkshire Hathaway Inc. - Class B"),
     ("ADBE", "Adobe Inc."),
     ("INTC", "Intel Corporation"),
@@ -66,16 +65,16 @@ if not df.empty:
 
 
     # Create a plot with matplotlib and seaborn
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(25, 18))
 
 
     
     
 
     # Add title and labels
-    plt.title(f'{stock_company} Stock Price Over Time')
-    plt.xlabel('Date')
-    plt.ylabel('Price (USD)')
+    plt.title(f'{stock_company} Stock Price Over Time', fontsize=30)
+    plt.xlabel('Date', fontsize=30)
+    plt.ylabel('Price (USD)', fontsize=30)
 
     button_placeholder = st.empty()
 
@@ -87,8 +86,8 @@ if not df.empty:
     if volume_button:
         weekly_volume = df['volume'].resample('W').sum().reset_index()
         weekly_volume['date'] = pd.to_datetime(weekly_volume['date'], errors='coerce')
-        plt.bar(weekly_volume["date"], weekly_volume["volume"], color="blue", alpha=0.6, width=5)
-        plt.title(f'{stock_company} Weekly Stock Volume.')
+        plt.bar(weekly_volume["date"], weekly_volume["volume"], color="blue",width=5)
+        plt.title(f'{stock_company} Weekly Stock Volume.', fontsize=25)
         show_price = st.button("Show Price Chart")
         button_placeholder.empty() 
     
@@ -96,6 +95,8 @@ if not df.empty:
         sns.lineplot(x='date', y='close', data=df, label='Closing Price', color='blue')
          # sns.lineplot(x='date', y='close', data=df, label='Close Price', color='red')
         sns.lineplot(x="date", y="sma_200", data=df,label="SMA_200", color="black", linestyle='--'  )
+        plt.legend(fontsize=25) 
+
 
     
     # Rotate the x-axis labels for better readability
@@ -103,6 +104,8 @@ if not df.empty:
 
     plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%b %Y'))  # This will show 'Jan 2025', 'Feb 2025', etc.
     plt.gca().xaxis.set_major_locator(mdates.MonthLocator())  # This will set the x-axis tick marks to months
+    plt.gca().tick_params(axis='x', labelsize=25) 
+    plt.gca().tick_params(axis='y', labelsize=25) 
 
     # Display the plot in the Streamlit app
     st.pyplot(plt)

@@ -14,7 +14,6 @@ stocks = [
     ("META", "Meta Platforms Inc(Facebook)"),
     ("TSLA", "Tesla Inc"),
     ("TSM", "Taiwan Semiconductor Manufacturing Company (TSMC)"),
-    ("BRK-A", "Berkshire Hathaway Inc. - Class A"),
     ("BRK-B", "Berkshire Hathaway Inc. - Class B"),
     ("ADBE", "Adobe Inc."),
     ("INTC", "Intel Corporation"),
@@ -50,14 +49,14 @@ for symbol, name in stocks:
 stock_list_data = pd.concat(stock_list_data)
 
 
-# data = pd.read_csv('stocks.csv')
+
 
 
 stock_list_data['Daily_Return'] = (((stock_list_data['Close'] - stock_list_data['Open']) / stock_list_data['Open']) * 100)
 
-stock_list_data['SMA_200'] = stock_list_data['Close'].rolling(window=200).mean()
+stock_list_data['SMA_200'] = stock_list_data.groupby("Company")['Close'].transform(lambda x: x.rolling(window=200).mean())
 
-stock_list_data['Volatility'] = stock_list_data['Daily_Return'].rolling(window=50).std()
+stock_list_data['Volatility'] = stock_list_data.groupby("Company")['Daily_Return'].transform(lambda x: x.rolling(window=50).std())
 
 stock_list_data['Daily_Return'] = stock_list_data['Daily_Return'].round(2).astype(str) + '%'
 
