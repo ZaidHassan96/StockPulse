@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 from db.db_config import connection
 
 
+
+
 def fetch_stock_data(company):
 
     try:
